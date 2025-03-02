@@ -1,6 +1,6 @@
 ## Overview
 APOLLUMIA is an ERC-20 token implemented on the Ethereum blockchain. It incorporates transaction tax mechanisms, anti-bot protections, and integrates with Uniswap for decentralized trading. 
-
+The staking contract enhances the utility of APOLLUMIA, encouraging long-term holding and engagement. 🚀 
 ## Features
 - **ERC-20 Standard Compliance**: Implements standard token functions such as `transfer`, `approve`, and `transferFrom`.
 - **Tax Mechanism**: Initial and final buy/sell tax rates apply to transactions, adjusting dynamically over time.
