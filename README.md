@@ -37,6 +37,3 @@ APOLLUMIA is an ERC-20 token implemented on the Ethereum blockchain. It incorpor
 - **Transfer Delay**: Prevents bots from executing multiple transactions within the same block.
 - **Fee Collection**: The collected tax is swapped for ETH and sent to the designated tax wallet.
 
-## License
-This project is released under the MIT License.
-
