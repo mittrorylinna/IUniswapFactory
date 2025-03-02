@@ -1,0 +1,68 @@
+pragma solidity 0.8.20;
+
+import "./APOLLUMIA.sol";
+
+contract ApollumiaStaking is Ownable {
+    using SafeMath for uint256;
+    
+    IERC20 public immutable apollumiaToken;
+    uint256 public rewardRate = 100; // Reward rate per block
+    uint256 public totalStaked;
+    
+    struct Stake {
+        uint256 amount;
+        uint256 rewardDebt;
+    }
+    
+    mapping(address => Stake) public stakes;
+    
+    event Staked(address indexed user, uint256 amount);
+    event Withdrawn(address indexed user, uint256 amount);
+    event RewardClaimed(address indexed user, uint256 reward);
+    
+    constructor(address _tokenAddress) {
+        require(_tokenAddress != address(0), "Invalid token address");
+        apollumiaToken = IERC20(_tokenAddress);
+    }
+    
+    function stake(uint256 _amount) external {
+        require(_amount > 0, "Cannot stake zero tokens");
+        
+        apollumiaToken.transferFrom(msg.sender, address(this), _amount);
+        totalStaked = totalStaked.add(_amount);
+        
+        stakes[msg.sender].amount = stakes[msg.sender].amount.add(_amount);
+        stakes[msg.sender].rewardDebt = stakes[msg.sender].rewardDebt.add(_amount.mul(rewardRate));
+        
+        emit Staked(msg.sender, _amount);
+    }
+    
+    function withdraw(uint256 _amount) external {
+        require(_amount > 0, "Cannot withdraw zero tokens");
+        require(stakes[msg.sender].amount >= _amount, "Insufficient staked balance");
+        
+        claimReward();
+        
+        stakes[msg.sender].amount = stakes[msg.sender].amount.sub(_amount);
+        totalStaked = totalStaked.sub(_amount);
+        
+        apollumiaToken.transfer(msg.sender, _amount);
+        
+        emit Withdrawn(msg.sender, _amount);
+    }
+    
+    function claimReward() public {
+        uint256 reward = stakes[msg.sender].amount.mul(rewardRate);
+        require(reward > 0, "No rewards available");
+        
+        stakes[msg.sender].rewardDebt = 0;
+        apollumiaToken.transfer(msg.sender, reward);
+        
+        emit RewardClaimed(msg.sender, reward);
+    }
+    
+    function updateRewardRate(uint256 _newRate) external onlyOwner {
+        require(_newRate > 0, "Reward rate must be greater than zero");
+        rewardRate = _newRate;
+    }
+}
