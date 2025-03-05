@@ -1,0 +1,20 @@
+# foundry.toml
+
+[profile.default]
+# Where your main contract source code lives
+src = "contracts"
+
+# Where your test files are located
+test = "mock"
+
+# Where compiled artifacts will be stored
+out = "out"
+
+# Compiler version
+compiler-version = "0.8.20"
+
+# Cache folder
+cache_path = "cache"
+
+# Automatically detect additional remappings from local libraries
+auto_detect_remappings = true
