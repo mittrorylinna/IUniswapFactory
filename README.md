@@ -76,5 +76,3 @@ APOLLUMIA is an ERC-20 token implemented on the Ethereum blockchain. It incorpor
 - **Exemption System**: Certain addresses (e.g., the owner and contract) are exempt from tax and trading restrictions.
 - **Trading Safety**: Trading can only begin once the owner explicitly enables it, ensuring security before deployment is finalized.
 - **Liquidity Optimization**: Automated strategies balance token supply in the liquidity pool based on trading trends.
-
-This README provides a comprehensive overview of the APOLLUMIA ecosystem, detailing its core functionalities and security mechanisms.
