@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract ApollumiaAirdrop is Ownable {
+    IERC20 public immutable token;
+
+    event AirdropDistributed(address indexed recipient, uint256 amount);
+
+    constructor(address _token) {
+        require(_token != address(0), "Invalid token address");
+        token = IERC20(_token);
+    }
+
+    function distributeAirdrop(address[] calldata recipients, uint256[] calldata amounts) external onlyOwner {
+        require(recipients.length == amounts.length, "Array length mismatch");
+        
+        for (uint256 i = 0; i < recipients.length; i++) {
+            require(recipients[i] != address(0), "Invalid recipient");
+            require(token.transfer(recipients[i], amounts[i]), "Token transfer failed");
+            emit AirdropDistributed(recipients[i], amounts[i]);
+        }
+    }
+
+    function recoverTokens(address to, uint256 amount) external onlyOwner {
+        require(to != address(0), "Invalid address");
+        require(token.transfer(to, amount), "Token recovery failed");
+    }
+}
