@@ -1,0 +1,9 @@
+# remappings.txt
+
+# If you have installed the official forge-std library via:
+# forge install foundry-rs/forge-std
+forge-std/=lib/forge-std/src/
+
+# If you have installed OpenZeppelin Contracts via:
+# forge install OpenZeppelin/openzeppelin-contracts
+openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/
