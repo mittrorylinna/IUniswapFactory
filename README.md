@@ -66,6 +66,9 @@ APOLLUMIA is an ERC-20 token implemented on the Ethereum blockchain. It incorpor
 - **Airdrop Safety**: Only the owner can execute the airdrop, ensuring controlled distribution.
 - **Liquidity Security**: The liquidity contract ensures that funds are properly managed to maintain trading stability.
 
+# Examples
+- The IUniswapFactory/examples/ directory contains example contracts demonstrating interactions with Apollumia's core contracts, including staking, trading, airdrops, and Uniswap swaps. These examples help developers integrate with Apollumia's smart contracts efficiently.
+
 # Additional Improvements
 
 - **Dynamic Tax Adjustment**: The buy and sell tax rates automatically decrease after a specific number of transactions.
