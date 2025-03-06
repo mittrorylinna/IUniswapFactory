@@ -1,4 +1,6 @@
 # Overview
+![Version](https://img.shields.io/github/v/release/mittrorylinna/IUniswapFactory)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 APOLLUMIA is an ERC-20 token implemented on the Ethereum blockchain. It incorporates transaction tax mechanisms, anti-bot protections, and integrates with Uniswap for decentralized trading. The staking contract enhances the utility of APOLLUMIA, encouraging long-term holding and engagement. Additionally, liquidity management and advanced transaction computation mechanisms are introduced to optimize trading efficiency and security. 
 
