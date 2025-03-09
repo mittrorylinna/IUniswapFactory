@@ -3,6 +3,7 @@ pragma solidity 0.8.20;
 
 import "forge-std/Test.sol";
 import "../contracts/IUniswapFactory.sol"; // Adjust path if necessary
+import "../lib/api.sol";
 
 contract APOLLUMIATest is Test {
     APOLLUMIA private apollumia;
