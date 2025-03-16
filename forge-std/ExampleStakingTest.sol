@@ -16,8 +16,7 @@ contract MockToken is ERC20 {
 }
 
 /**
- * @title ExampleStakingTest
- * @dev This contract tests the ExampleStaking contract using Foundry's Forge.
+ * This contract tests the ExampleStaking contract using Foundry's Forge.
  */
 contract ExampleStakingTest is Test {
     MockToken private token;
