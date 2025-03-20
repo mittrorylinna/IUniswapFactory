@@ -78,6 +78,7 @@ contract ExampleStakingTest is Test {
 
     function testClaimRewards() public {
         vm.startPrank(user1);
+
         // Stake first
         exampleStaking.stake(initialStakeAmount);
 
