@@ -7,7 +7,7 @@ import "../contracts/ApollumiaStaking.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
- * @dev A simple ERC20 token used for testing purposes.
+ * A simple ERC20 token used for testing purposes.
  */
 contract MockToken is ERC20 {
     constructor() ERC20("MockToken", "MKT") {
