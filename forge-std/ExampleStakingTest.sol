@@ -63,7 +63,7 @@ contract ExampleStakingTest is Test {
     function testWithdrawTokens() public {
         vm.startPrank(user1);
 
-        // Stake first
+        // Stake tokens first，then to withdraw
         exampleStaking.stake(initialStakeAmount);
 
         // Withdraw tokens
