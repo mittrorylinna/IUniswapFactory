@@ -32,9 +32,9 @@ abstract contract Test {
         assertTrue(condition, "Assertion Failure: condition is false");
     }
 
-    // Example function for expecting a revert
-    // In the official Foundry library, you would use `vm.expectRevert(...)`.
-    // Here we demonstrate a no-op for illustration only.
+    // An example function for expecting a revert
+    // In the official Foundry library, you would use `vm.expectRevert(...)`
+    // Here we demonstrate a no-op for illustration only
     function expectRevert(bytes memory) internal pure {
         // No-op in this minimal example
         // The real foundry Test.sol uses cheat codes from 'Vm' to handle reverts
